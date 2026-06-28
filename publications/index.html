@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Publications | Foivos Tsimpourlas</title>
+    <meta name="description" content="Publications by Foivos Tsimpourlas.">
+    <link rel="canonical" href="https://foivos.co.uk/publications/">
+    <meta property="og:title" content="Publications | Foivos Tsimpourlas">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://foivos.co.uk/publications/">
+    <meta property="og:image" content="https://foivos.co.uk/assets/img/publications-hero.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="/assets/img/favicon.jpg">
+    <link rel="stylesheet" href="/assets/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <div>
+          <a class="brand-link" href="/">Foivos Tsimpourlas</a>
+          <nav class="main-nav" aria-label="Site">
+            <a href="/cv/">CV</a>
+            <a href="/publications/" aria-current="page">Publications</a>
+          </nav>
+        </div>
+        <div class="header-contact">
+          <span class="email">[ fivosts [at] gmail ]</span>
+          <div class="socials" aria-label="Social links">
+            <a href="https://github.com/fivosts" aria-label="GitHub">
+              <img src="/assets/img/github.png" alt="">
+            </a>
+            <a href="https://scholar.google.com/citations?user=wBS7nUoAAAAJ&amp;hl=en" aria-label="Google Scholar">
+              <img src="/assets/img/scholar.png" alt="">
+            </a>
+            <a href="https://www.linkedin.com/in/foivos-tsimpourlas/" aria-label="LinkedIn">
+              <img src="/assets/img/linkedin.png" alt="">
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero hero-page" aria-label="Beach and blue sea">
+        <img src="/assets/img/publications-hero.jpg" alt="A beach and blue sea below steep cliffs.">
+      </section>
+
+      <section class="dark-band">
+        <div class="publications">
+          <h1 class="section-title">Publications</h1>
+
+          <article class="publication">
+            <div class="pub-actions">
+              <a href="/assets/docs/deep-language-models-thesis.pdf">[PDF]</a>
+            </div>
+            <details>
+              <summary>
+                <span class="pub-title">"Deep Language Models for Software Testing and Optimisation", <em>PhD Thesis</em></span>
+                <span class="pub-meta">Foivos Tsimpourlas</span>
+                <span class="pub-summary">TLDR: My PhD thesis. Language models to make programs easier to debug and faster to execute.</span>
+                <span class="more-label"><span class="more-closed">More</span><span class="more-open">Less</span></span>
+              </summary>
+              <div class="abstract">
+                <p><strong>Abstract:</strong> Developing software is difficult. A challenging part of production development is ensuring programs are correct and fast, two properties satisfied with software testing and optimisation. While both tasks still rely on manual effort and expertise, the recent surge in software applications has led them to become tedious and time-consuming. Under this fast-pace environment, manual testing and optimisation hinders productivity significantly and leads to error-prone or sub-optimal programs that waste energy and lead users to frustration. In this thesis, we propose three novel approaches to automate software testing and optimisation with modern language models based on deep learning. In contrast to our methods, existing few techniques in these two domains have limited scalability and struggle when they face real-world applications.</p>
+                <p>Our first contribution lies in the field of software testing and aims to automate the test oracle problem, which is the procedure of determining the correctness of test executions. The test oracle is still largely manual, relying on human experts. Automating the oracle is a non-trivial task that requires software specifications or derived information that are often too difficult to extract. We present the first application of deep language models over program execution traces to predict runtime correctness. Our technique classifies test executions of large-scale codebases used in production as "pass" or "fail". Our proposed approach reduces by 86% the amount of test inputs an expert has to label by training only on 14% and classifying the rest automatically.</p>
+                <p>Our next two contributions improve the effectiveness of compiler optimisation. Compilers optimise programs by applying heuristic-based transformations constructed by compiler engineers. Selecting the right transformations requires extensive knowledge of the compiler, the subject program and the target architecture. Predictive models have been successfully used to automate heuristics construction but their performance is hindered by a shortage of training benchmarks in quantity and feature diversity. Our next contributions address the scarcity of compiler benchmarks by generating human-likely synthetic programs to improve the performance of predictive models.</p>
+                <p>Our second contribution is BenchPress, the first steerable deep learning synthesizer for executable compiler benchmarks. BenchPress produces human-like programs that compile at a rate of 87%. It targets parts of the feature space previously unreachable by other synthesizers, addressing the scarcity of high-quality training data for compilers. BenchPress improves the performance of a device mapping predictive model by 50% when it introduces synthetic benchmarks into its training data.</p>
+                <p>BenchPress is restricted by a feature-agnostic synthesizer that requires thousands of random inferences to select a few that target the desired features. Our third contribution addresses this inefficiency. We develop BenchDirect, a directed language model for compiler benchmark generation. BenchDirect synthesizes programs by jointly observing the source code context and the compiler features that are targeted. This enables efficient steerable generation on large scale tasks. Compared to BenchPress, BenchDirect matches successfully 1.8x more Rodinia target benchmarks, while it is up to 36% more accurate and up to 72% faster in targeting three different feature spaces for compilers.</p>
+                <p>All three contributions demonstrate the exciting potential of deep learning and language models to simplify the testing of programs and the construction of better optimisation heuristics for compilers. The outcomes of this thesis provides developers with tools to keep up with the rapidly evolving landscape of software engineering.</p>
+              </div>
+            </details>
+          </article>
+
+          <article class="publication">
+            <div class="pub-actions">
+              <a href="/assets/docs/benchdirect.pdf">[PDF]</a>
+              <a href="https://github.com/fivosts/BenchPress">[CODE]</a>
+            </div>
+            <details>
+              <summary>
+                <span class="pub-title">"BenchDirect: A Directed Language Model for Compiler Benchmarks", TBA 2023</span>
+                <span class="pub-meta">F. Tsimpourlas, P. Petoumenos, C. Cummins, M. Xu, K. Hazelwood, A. Rajan, H. Leather</span>
+                <span class="pub-summary">TLDR: A directed language model that generates compiling programs by attending on the desired set of features.</span>
+                <span class="more-label"><span class="more-closed">More</span><span class="more-open">Less</span></span>
+              </summary>
+              <div class="abstract">
+                <p><strong>Abstract:</strong> The exponential increase of hardware-software complexity has made it impossible for compiler engineers to find the right optimization heuristics manually. Predictive models have been shown to find near optimal heuristics with little human effort but they are limited by a severe lack of diverse benchmarks to train on. Generative AI has been used by researchers to synthesize benchmarks into existing datasets. However, the synthetic programs are short, exceedingly simple and lacking diversity in their features.</p>
+                <p>We develop BenchPress, the first ML compiler benchmark generator that can be directed within source code feature representations. BenchPress synthesizes executable functions by infilling code that conditions on the program's left and right context. BenchPress uses active learning to introduce new benchmarks with unseen features into the dataset of Grewe's et al. CPU vs GPU heuristic, improving its acquired performance by 50%. BenchPress targets features that has been impossible for other synthesizers to reach. In 3 feature spaces, we outperform human-written code from GitHub, CLgen, CLSmith and the SRCIROR mutator in targeting the features of Rodinia benchmarks.</p>
+                <p>BenchPress steers generation with beam search over a feature-agnostic language model. We improve this with BenchDirect which utilizes a directed LM that infills programs by jointly observing source code context and the compiler features that are targeted. BenchDirect achieves up to 36% better accuracy in targeting the features of Rodinia benchmarks, it is 1.8x more likely to give an exact match and it speeds up execution time by up to 72% compared to BenchPress. Both our models produce code that is difficult to distinguish from human-written code. We conduct a Turing test which shows our models' synthetic benchmarks are labelled as 'human-written' as often as human-written code from GitHub.</p>
+              </div>
+            </details>
+          </article>
+
+          <article class="publication">
+            <div class="pub-actions">
+              <a href="/assets/docs/benchpress.pdf">[PDF]</a>
+              <a href="https://github.com/fivosts/BenchPress">[CODE]</a>
+            </div>
+            <details>
+              <summary>
+                <span class="pub-title">"BenchPress: A Deep Active Benchmark Generator", <em>PACT 2022</em></span>
+                <span class="pub-meta">F. Tsimpourlas, P. Petoumenos, C. Cummins, M. Xu, K. Hazelwood, A. Rajan, H. Leather</span>
+                <span class="pub-summary">TLDR: The first BERT-based neural program synthesizer that directs generation by infilling compiler benchmarks.</span>
+                <span class="more-label"><span class="more-closed">More</span><span class="more-open">Less</span></span>
+              </summary>
+              <div class="abstract">
+                <p><strong>Abstract:</strong> Finding the right heuristics to optimize code has always been a difficult and mostly manual task for compiler engineers. Today this task is near-impossible as hardware-software complexity has scaled up exponentially. Predictive models for compilers have recently emerged which require little human effort but are far better than humans in finding near optimal heuristics. As any machine learning technique, they are only as good as the data they are trained on but there is a severe shortage of code for training compilers. Researchers have tried to remedy this with code generation but their synthetic benchmarks, although thousands, are small, repetitive and poor in features, therefore ineffective. This indicates the shortage is of feature quality more than corpus size. It is more important than ever to develop a directed program generation approach that will produce benchmarks with valuable features for training compiler heuristics.</p>
+                <p>We develop BenchPress, the first ML benchmark generator for compilers that is steerable within feature space representations of source code. BenchPress synthesizes compiling functions by adding new code in any part of an empty or existing sequence by jointly observing its left and right context, achieving excellent compilation rate. BenchPress steers benchmark generation towards desired target features that has been impossible for state of the art synthesizers (or indeed humans) to reach. It performs better in targeting the features of Rodinia benchmarks in 3 different feature spaces compared with (a) CLgen - a state of the art ML synthesizer, (b) CLSmith fuzzer, (c) SRCIROR mutator or even (d) human-written code from GitHub. BenchPress is the first generator to search the feature space with active learning in order to generate benchmarks that will improve a downstream task. We show how using BenchPress, Grewe's et al. CPU vs GPU heuristic model can obtain a higher speedup when trained on BenchPress's benchmarks compared to other techniques. BenchPress is a powerful code generator: Its generated samples compile at a rate of 86%, compared to CLgen's 2.33%. Starting from an empty fixed input, BenchPress produces 10x more unique, compiling OpenCL benchmarks than CLgen, which are significantly larger and more feature diverse.</p>
+              </div>
+            </details>
+          </article>
+
+          <article class="publication">
+            <div class="pub-actions">
+              <a href="/assets/docs/embedding-classifying-test-execution-traces.pdf">[PDF]</a>
+              <a href="https://github.com/fivosts/Learning-over-test-executions">[CODE]</a>
+            </div>
+            <details>
+              <summary>
+                <span class="pub-title">"Embedding and Classifying Test Execution Traces Using Neural Networks", <em>IET 2022</em></span>
+                <span class="pub-meta">F. Tsimpourlas, G. Rooijackers, A. Rajan, M. Allamanis</span>
+                <span class="pub-summary">TLDR: A general approach to tackling the test oracle problem with supervised learning in Java and C++.</span>
+                <span class="more-label"><span class="more-closed">More</span><span class="more-open">Less</span></span>
+              </summary>
+              <div class="abstract">
+                <p><strong>Abstract:</strong> Classifying test executions automatically as pass or fail remains a key challenge in software testing and is referred to as the test oracle problem. It is being attempted to solve this problem with supervised learning over test execution traces. A programme is instrumented to gather execution traces as sequences of method invocations. A small fraction of the programme's execution traces is labelled with pass or fail verdicts. Execution traces are then embedded as fixed length vectors and a neural network (NN) component that uses the line-by-line information to classify traces as pass or fail is designed. The classification accuracy of this approach is evaluated using subject programs from different application domains: 1. Module from Ethereum Blockchain, 2. Module from PyTorch deep learning framework, 3. Microsoft SEAL encryption library components, 4. Sed stream editor, 5. Nine network protocols from Linux packet identifier, L7-Filter and 6. Utilities library, commons-lang for Java. For all subject programs, it was found that test execution classification had high precision, recall and specificity, averaging to 93%, 94% and 96%, respectively, while only training with an average 14% of the total traces. Experiments show that the proposed NN-based approach is promising in classifying test executions from different application domains.</p>
+              </div>
+            </details>
+          </article>
+
+          <article class="publication">
+            <div class="pub-actions">
+              <a href="/assets/docs/supervised-learning-test-executions.pdf">[PDF]</a>
+              <a href="https://github.com/fivosts/Learning-over-test-executions">[CODE]</a>
+            </div>
+            <details>
+              <summary>
+                <span class="pub-title">"Supervised Learning over Test Executions as a Test Oracle", <em>SAC 2021</em></span>
+                <span class="pub-meta">F. Tsimpourlas, A. Rajan, M. Allamanis</span>
+                <span class="pub-summary">TLDR: A neural embedding approach for classifying runtime executions in large-scale C++.</span>
+                <span class="more-label"><span class="more-closed">More</span><span class="more-open">Less</span></span>
+              </summary>
+              <div class="abstract">
+                <p><strong>Abstract:</strong> The challenge of automatically determining the correctness of test executions is referred to as the test oracle problem and is a key remaining issue for automated testing. The paper aims at solving the test oracle problem in a scalable and accurate way. To achieve this, we use supervised learning over test execution traces. We label a small fraction of the execution traces with their verdict of pass or fail. We use the labelled traces to train a neural network (NN) model to learn to distinguish runtime patterns for passing versus failing executions for a given program.</p>
+                <p>We evaluate our approach using case studies from different application domains - 1. Module from Ethereum Blockchain, 2. Module from PyTorch deep learning framework, 3. Microsoft SEAL encryption library components and 4. Sed stream editor. We found the classification models for all subject programs resulted in high precision, recall and specificity, averaging to 89%, 88% and 92% respectively, while only training with an average 15% of the total traces. Our experiments show that the proposed NN model is promising as a test oracle and is able to learn runtime patterns to distinguish test executions for systems and tests from different application domains.</p>
+              </div>
+            </details>
+          </article>
+
+          <article class="publication">
+            <div class="pub-actions">
+              <a href="/assets/docs/cnn-edge-devices.pdf">[PDF]</a>
+              <a href="https://github.com/fivosts/CNNs-on-embedded-systems">[CODE]</a>
+            </div>
+            <details>
+              <summary>
+                <span class="pub-title">"A Design Space Exploration Framework for Convolutional Neural Networks Implemented on Edge Devices", <em>CODES+ISSS 2018</em></span>
+                <span class="pub-meta">F. Tsimpourlas, L. Papadopoulos, A. Bartsokas, D. Soudris</span>
+                <span class="pub-summary">TLDR: An optimal, ML framework-agnostic engine to execute CNNs on embedded device, optimising GoogleNet by 16%.</span>
+                <span class="more-label"><span class="more-closed">More</span><span class="more-open">Less</span></span>
+              </summary>
+              <div class="abstract">
+                <p><strong>Abstract:</strong> Deploying convolutional neural networks (CNNs) in embedded devices that operate at the edges of Internet of Things (IoT) networks provides various advantages in terms of performance, energy efficiency, and security in comparison with the alternative approach of transmitting large volumes of data for processing to the cloud. However, the implementation of CNNs on low power embedded devices is challenging due to the limited computational resources they provide and to the large resource requirements of state-of-the-art CNNs. In this paper, we propose a framework for the efficient deployment of CNNs in low power processor-based architectures used as edge devices in IoT networks. The framework leverages design space exploration (DSE) techniques to identify efficient implementations in terms of execution time and energy consumption. The exploration parameter is the utilization of hardware resources of the edge devices. The proposed framework is evaluated using a set of 6 state-of-the-art CNNs deployed in the Intel/Movidius Myriad2 low power embedded platform. The results show that using the maximum available amount of resources is not always the optimal solution in terms of performance and energy efficiency. Fine-tuned resource management based on DSE, reduces the execution time up to 3.6% and the energy consumption up to 7.7% in comparison with straightforward implementations.</p>
+              </div>
+            </details>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">&copy;2024 Foivos Tsimpourlas</footer>
+  </body>
+</html>
