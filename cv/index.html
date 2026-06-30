@@ -13,16 +13,23 @@
     <meta property="og:image" content="https://foivos.co.uk/assets/img/cv-hero.jpg">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" href="/assets/img/favicon.jpg">
-    <link rel="stylesheet" href="/assets/styles.css?v=7">
+    <link rel="stylesheet" href="/assets/styles.css?v=36">
+    <script src="/assets/site.js?v=3" defer></script>
   </head>
   <body>
     <header class="site-header">
       <div class="header-inner">
-        <div>
+        <button class="mobile-menu-toggle" type="button" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="header-brand-nav">
           <a class="brand-link" href="/">Foivos Tsimpourlas</a>
           <nav class="main-nav" aria-label="Site">
+            <a class="mobile-menu-home" href="/">Home</a>
             <a href="/cv/" aria-current="page">CV</a>
-            <a href="/publications/">Publications</a>
+            <a href="https://scholar.google.com/citations?user=wBS7nUoAAAAJ&amp;hl=en">Publications</a>
           </nav>
         </div>
         <div class="header-contact">
@@ -41,6 +48,12 @@
         </div>
       </div>
     </header>
+    <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile menu" hidden>
+      <button class="mobile-menu-close" type="button" aria-label="Close menu"></button>
+      <a href="/">Home</a>
+      <a href="/cv/" aria-current="page">CV</a>
+      <a href="https://scholar.google.com/citations?user=wBS7nUoAAAAJ&amp;hl=en">Publications</a>
+    </nav>
 
     <main>
       <section class="hero hero-page" aria-label="Chicago skyline">
@@ -50,81 +63,157 @@
       <section class="dark-band">
         <div class="content cv-intro">
           <h1 class="section-title">Professional Experience &amp; Education</h1>
-          <a class="pdf-inline" href="/assets/docs/foivos-tsimpourlas-cv.pdf"><span>[PDF]</span></a>
+          <div class="pdf-actions">
+            <a class="pdf-inline" href="/assets/docs/foivos-tsimpourlas-cv.pdf"><span>[PDF]</span></a>
+            <a class="pdf-icon-link" href="/assets/docs/foivos-tsimpourlas-cv.pdf" aria-label="Download CV PDF">
+              <img src="/assets/img/pdf-icon.png" alt="">
+            </a>
+          </div>
         </div>
 
-        <div class="timeline" aria-label="Professional experience and education timeline">
-          <article class="timeline-item left">
-            <div class="timeline-card">
-              <img class="timeline-logo" src="/assets/img/openai.png" alt="OpenAI">
-              <h2>Research Scientist @ OpenAI</h2>
-              <p>San Francisco, California, US</p>
-              <p>Jul 2023 - Present</p>
+        <div class="cv-explorer" data-cv-explorer aria-label="Interactive professional experience and education timeline">
+          <section class="cv-focus" aria-live="polite">
+            <div class="cv-focus-top">
+              <div class="cv-focus-logo">
+                <img src="/assets/img/openai.png" alt="OpenAI" data-cv-logo>
+              </div>
+              <p class="cv-focus-kicker" data-cv-group>Experience &middot; Current</p>
             </div>
-          </article>
+            <h2 data-cv-title>Research Scientist</h2>
+            <p class="cv-focus-org" data-cv-org>OpenAI</p>
+            <p class="cv-focus-meta" data-cv-meta>Jul 2023 - Present &middot; San Francisco, California, US</p>
+            <p class="cv-focus-summary" data-cv-summary>Senior research scientist at OpenAI.</p>
+          </section>
 
-          <article class="timeline-item right">
-            <div class="timeline-card">
-              <img class="timeline-logo" src="/assets/img/tiktok.png" alt="TikTok">
-              <h2>ML Resarcher @ TikTok - ByteDance, Part-Time</h2>
-              <p>London, UK (Remote)</p>
-              <p>Oct 2022 - Apr 2023</p>
-            </div>
-          </article>
+          <div class="cv-rail" role="tablist" aria-label="CV entries">
+            <button class="cv-node is-active" type="button" role="tab" aria-selected="true"
+              data-group="Experience &middot; Current"
+              data-title="Research Scientist"
+              data-org="OpenAI"
+              data-meta="Jul 2023 - Present &middot; San Francisco, California, US"
+              data-summary="Senior research scientist at OpenAI."
+              data-logo="/assets/img/openai.png"
+              data-alt="OpenAI">
+              <span class="cv-node-mark"><img src="/assets/img/openai.png" alt=""></span>
+              <span class="cv-node-copy">
+                <span class="cv-node-year">2023 - Now</span>
+                <span class="cv-node-title">OpenAI</span>
+                <span class="cv-node-subtitle">Research Scientist</span>
+              </span>
+            </button>
 
-          <article class="timeline-item left">
-            <div class="timeline-card">
-              <img class="timeline-logo" src="/assets/img/meta.png" alt="Meta AI">
-              <h2>Research Scientist Intern @ Meta AI</h2>
-              <p>Menlo Park, California, US</p>
-              <p>May 2022 - Aug 2022</p>
-            </div>
-          </article>
+            <button class="cv-node" type="button" role="tab" aria-selected="false"
+              data-group="Experience"
+              data-title="ML Researcher, Part-Time"
+              data-org="TikTok - ByteDance"
+              data-meta="Oct 2022 - Apr 2023 &middot; London, UK (Remote)"
+              data-summary="Part-time research on fault localization for concurrency execution bugs in Go routines using LLMs."
+              data-logo="/assets/img/tiktok.png"
+              data-alt="TikTok">
+              <span class="cv-node-mark"><img src="/assets/img/tiktok.png" alt=""></span>
+              <span class="cv-node-copy">
+                <span class="cv-node-year">2022 - 2023</span>
+                <span class="cv-node-title">TikTok - ByteDance</span>
+                <span class="cv-node-subtitle">ML Researcher, Part-Time</span>
+              </span>
+            </button>
 
-          <article class="timeline-item right">
-            <div class="timeline-card">
-              <img class="timeline-logo" src="/assets/img/adaf.png" alt="Athens Digital Arts Festival">
-              <h2>Research Scientist @ Athens Digital Arts Festival, Part-Time</h2>
-              <p>Athens, Greece (Remote)</p>
-              <p>Feb 2021 - Feb 2022</p>
-            </div>
-          </article>
+            <button class="cv-node" type="button" role="tab" aria-selected="false"
+              data-group="Experience"
+              data-title="Research Scientist Intern"
+              data-org="Meta AI"
+              data-meta="May 2022 - Aug 2022 &middot; Menlo Park, California, US"
+              data-summary="Research internship on PPO/TRPO RL-based LLMs for OpenCL/CUDA kernel synthesis."
+              data-logo="/assets/img/meta.png"
+              data-alt="Meta AI">
+              <span class="cv-node-mark"><img src="/assets/img/meta.png" alt=""></span>
+              <span class="cv-node-copy">
+                <span class="cv-node-year">2022</span>
+                <span class="cv-node-title">Meta AI</span>
+                <span class="cv-node-subtitle">Research Scientist Intern</span>
+              </span>
+            </button>
 
-          <article class="timeline-item left">
-            <div class="timeline-card">
-              <img class="timeline-logo" src="/assets/img/arm.jpg" alt="Arm">
-              <h2>Compiler Engineering Intern @ ARM</h2>
-              <p>Cambridge, England, UK</p>
-              <p>Sep 2019 - Jan 2020</p>
-            </div>
-          </article>
+            <button class="cv-node" type="button" role="tab" aria-selected="false"
+              data-group="Experience"
+              data-title="Research Scientist, Part-Time"
+              data-org="Athens Digital Arts Festival"
+              data-meta="Feb 2021 - Feb 2022 &middot; Athens, Greece (Remote)"
+              data-summary="ML research lead for a real-time recommendation system for art exhibitions."
+              data-logo="/assets/img/adaf.png"
+              data-alt="Athens Digital Arts Festival">
+              <span class="cv-node-mark"><img src="/assets/img/adaf.png" alt=""></span>
+              <span class="cv-node-copy">
+                <span class="cv-node-year">2021 - 2022</span>
+                <span class="cv-node-title">Athens Digital Arts Festival</span>
+                <span class="cv-node-subtitle">Research Scientist, Part-Time</span>
+              </span>
+            </button>
 
-          <article class="timeline-item right">
-            <div class="timeline-card">
-              <img class="timeline-logo" src="/assets/img/edinburgh.png" alt="The University of Edinburgh">
-              <h2>PhD @ The University of Edinburgh</h2>
-              <p>Edinburgh, Scotland, UK</p>
-              <p>Sep 2019 - May 2023</p>
-            </div>
-          </article>
+            <button class="cv-node" type="button" role="tab" aria-selected="false"
+              data-group="Experience"
+              data-title="Compiler Engineering Intern"
+              data-org="Arm"
+              data-meta="Sep 2019 - Jan 2020 &middot; Cambridge, England, UK"
+              data-summary="Systems work on Armv8 GICv4 distributed multichip operation for ARM-based distributed servers."
+              data-logo="/assets/img/arm.jpg"
+              data-alt="Arm">
+              <span class="cv-node-mark"><img src="/assets/img/arm.jpg" alt=""></span>
+              <span class="cv-node-copy">
+                <span class="cv-node-year">2019 - 2020</span>
+                <span class="cv-node-title">Arm</span>
+                <span class="cv-node-subtitle">Compiler Engineering Intern</span>
+              </span>
+            </button>
 
-          <article class="timeline-item left">
-            <div class="timeline-card">
-              <img class="timeline-logo" src="/assets/img/edinburgh.png" alt="The University of Edinburgh">
-              <h2>MSc by Research @ The University of Edinburgh</h2>
-              <p>Edinburgh, Scotland, UK</p>
-              <p>Sep 2018 - Aug 2019</p>
-            </div>
-          </article>
+            <button class="cv-node" type="button" role="tab" aria-selected="false"
+              data-group="Education"
+              data-title="PhD"
+              data-org="The University of Edinburgh"
+              data-meta="Sep 2019 - May 2023 &middot; Edinburgh, Scotland, UK"
+              data-summary="Doctoral research on language models for compiler optimizations and robust runtime program analysis."
+              data-logo="/assets/img/edinburgh.png"
+              data-alt="The University of Edinburgh">
+              <span class="cv-node-mark"><img src="/assets/img/edinburgh.png" alt=""></span>
+              <span class="cv-node-copy">
+                <span class="cv-node-year">2019 - 2023</span>
+                <span class="cv-node-title">The University of Edinburgh</span>
+                <span class="cv-node-subtitle">PhD</span>
+              </span>
+            </button>
 
-          <article class="timeline-item right">
-            <div class="timeline-card">
-              <img class="timeline-logo" src="/assets/img/ntua.png" alt="National Technical University of Athens">
-              <h2>Electrical &amp; Computer Engineering @ NTUA</h2>
-              <p>Athens, Greece</p>
-              <p>Sep 2011 - Jul 2018</p>
-            </div>
-          </article>
+            <button class="cv-node" type="button" role="tab" aria-selected="false"
+              data-group="Education"
+              data-title="MSc by Research"
+              data-org="The University of Edinburgh"
+              data-meta="Sep 2018 - Aug 2019 &middot; Edinburgh, Scotland, UK"
+              data-summary="Research degree at Edinburgh leading into later work across machine learning and compiler engineering."
+              data-logo="/assets/img/edinburgh.png"
+              data-alt="The University of Edinburgh">
+              <span class="cv-node-mark"><img src="/assets/img/edinburgh.png" alt=""></span>
+              <span class="cv-node-copy">
+                <span class="cv-node-year">2018 - 2019</span>
+                <span class="cv-node-title">The University of Edinburgh</span>
+                <span class="cv-node-subtitle">MSc by Research</span>
+              </span>
+            </button>
+
+            <button class="cv-node" type="button" role="tab" aria-selected="false"
+              data-group="Education"
+              data-title="Electrical &amp; Computer Engineering"
+              data-org="National Technical University of Athens"
+              data-meta="Sep 2011 - Jul 2018 &middot; Athens, Greece"
+              data-summary="Engineering foundation in electrical and computer systems."
+              data-logo="/assets/img/ntua.png"
+              data-alt="National Technical University of Athens">
+              <span class="cv-node-mark"><img src="/assets/img/ntua.png" alt=""></span>
+              <span class="cv-node-copy">
+                <span class="cv-node-year">2011 - 2018</span>
+                <span class="cv-node-title">National Technical University of Athens</span>
+                <span class="cv-node-subtitle">Electrical &amp; Computer Engineering</span>
+              </span>
+            </button>
+          </div>
         </div>
       </section>
     </main>
